@@ -1,0 +1,47 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+body {
+	font-family: Poppins;
+}
+.site-wrapper{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	overflow-x: hidden;
+}
+.container-fluid {
+	padding:0 !important;
+	margin:0 !important;
+	width: 100% !important;
+}
+p {
+	font-size: 12pt;
+	line-height: 180%;
+}
+h1 {
+	font-size: 36px;
+	text-align: center;
+}
+h2 {
+	font-size: 18px;
+}
+h3 {
+	font-size: 14px;
+}
+hr { 
+	display: block;
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 1px;
+}
