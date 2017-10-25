@@ -107,15 +107,8 @@
 
   <div id="modal2" class="modal">
     <div class="modal-content">
-      <h4>Poetry</h4>
-      <p>This manual tells you how to operate the Poetry Vending Machine. The Poetry Vending Machine will allow you to dispense a random poem at your will.</p>
-      <ol>
-        <li>Open a web browser and visit this link: http://conankun.us/vendpoet/</li>
-        <li>Click the button “GET POEM” on the home page</li>
-        <li>A random poem will be displayed for your enjoyment</li>
-        <li>Enjoy!</li>
-        <li>If you would like to read another poem, navigate back to the home page and repeat the steps.</li>
-      </ol>
+      <h4 id="poetry_title">Poetry</h4>
+      <p id="poetry_lines"></p>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -148,7 +141,8 @@
             var index = Math.floor((Math.random() * n) + 1);
             var title = data[index]['title'];
             var lines = data[index]['lines'];
-            alert(title);
+            $('#poetry_title').html(title);
+            $('#poetry_lines').html(lines);
         });
       });
 
