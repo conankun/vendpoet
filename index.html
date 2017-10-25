@@ -108,6 +108,7 @@
   <div id="modal2" class="modal">
     <div class="modal-content">
       <h4 id="poetry_title">Poetry</h4>
+      <h5 id="poetry_author">Author</h5>
       <p id="poetry_lines"></p>
     </div>
     <div class="modal-footer">
@@ -150,13 +151,15 @@
             var n = data.length;
             var index = Math.floor((Math.random() * n) + 1);
             var title = data[index]['title'];
+	    var author = data[index]['author'];
             var str = "";
             var lines = data[index]['lines'];
             for(var i = 0; i < lines.length; i++) {
               str += lines[i];
               str += "<br>";
             } 
-            $('#poetry_title').html(title + " (Emily Dickinson)");
+            $('#poetry_title').html(title);
+	    $('#poetry_author').html(author);
             $('#poetry_lines').html(str);
             $('#modal2').modal('open');
         });
