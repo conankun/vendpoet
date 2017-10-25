@@ -144,7 +144,11 @@
       $('#download-button').click(function() {
         readTextFile("http://conankun.us/vendpoet/poem/Emily_Dickinson.json", function(text){
             var data = JSON.parse(text);
-            console.log(data);
+            var n = data.length;
+            var index = Math.floor((Math.random() * n) + 1);
+            var title = data[index]['title'];
+            var lines = data[index]['lines'];
+            alert(title);
         });
       });
 
