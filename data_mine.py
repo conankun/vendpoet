@@ -13,11 +13,11 @@ data_authors = json.loads(json_authors_str)
 
 for author in data_authors['authors']:
 	author = author.replace(" ", "%20")
-	url = "http://poetrydb.org/author/"+author+"/title"
+	url = "http://poetrydb.org/author/"+author
 	print (url)
 	response = urllib.request.urlopen(url)
 	author = author.replace("%20", "_")
 	f = open('poem/'+author+'.json', 'w')
-	f.write(response.read().decode())
+	f.write(str(response.read().decode()))
 	f.close()
 	
