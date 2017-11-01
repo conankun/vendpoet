@@ -159,22 +159,32 @@
       $('.modal').modal();
 
       $('#download-button').click(function() {
-        readTextFile("http://conankun.us/vendpoet/poem/Emily_Dickinson.json", function(text){
-            var data = JSON.parse(text);
-            var n = data.length;
-            var index = Math.floor((Math.random() * n) + 1);
-            var title = data[index]['title'];
-	    var author = data[index]['author'];
-            var str = "";
-            var lines = data[index]['lines'];
-            for(var i = 0; i < lines.length; i++) {
-              str += lines[i];
-              str += "<br>";
-            } 
-            $('#poetry_title').html(title);
-	    $('#poetry_author').html(author);
-            $('#poetry_lines').html(str);
-            $('#modal2').modal('open');
+        readTextFile("http://conankun.us/vendpoet/authors.json", function(text1){
+          var data = JSON.parse(text1);
+          
+          var authors = data['authors'];
+          var n = authors.length;
+          var aindex = Math.floor((Math.random() * n) + 1);
+          var rand_auth = authors[aindex];
+          // TODO: replace " " with "_"
+          rand_auth = rand_auth.replace(" ", "_");
+          readTextFile("http://conankun.us/vendpoet/poem/"+rand_auth+".json", function(text){
+              var data = JSON.parse(text);
+              var n = data.length;
+              var index = Math.floor((Math.random() * n) + 1);
+              var title = data[index]['title'];
+  	          var author = data[index]['author'];
+              var str = "";
+              var lines = data[index]['lines'];
+              for(var i = 0; i < lines.length; i++) {
+                str += lines[i];
+                str += "<br>";
+              } 
+              $('#poetry_title').html(title);
+  	    $('#poetry_author').html(author);
+              $('#poetry_lines').html(str);
+              $('#modal2').modal('open');
+          });
         });
       });
 
