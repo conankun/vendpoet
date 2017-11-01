@@ -179,7 +179,7 @@
           readTextFile("http://conankun.us/vendpoet/poem/"+rand_auth+".json", function(text){
               var data = JSON.parse(text);
               var n = data.length;
-              var index = Math.floor((Math.random() * n) + 1);
+              var index = Math.floor(Math.random() * n);
               var title = data[index]['title'];
               var author = replaceAll(rand_auth, "_", " ");
               var str = "";
